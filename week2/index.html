@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 HW</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>An Important Business Call</h1>
+    <p>click on the image to continue</p>
+    <!-- zoom meeting setup -->
+    <div id="meeting">
+        <img id="meetingImg" src="assets/0screen.png" onclick="changeImage(this)">
+
+        <!-- if mic button is pressed, then goes from 2 to 0 not 2 to 3 -->
+        <button id="micbttn"><img id="micpic" src="assets/micOn.png"></button>
+    
+        <!-- pop up window for speech bubbles -->
+        <div id="popup">
+            <img id="popupimg" src="assets/maingoal.png">
+        </div>
+    </div>
+
+    <div id="msg" onclick="window.location.reload()"></div>
+    
+<script src="script.js"></script>
+</body>
+</html>
