@@ -1,0 +1,12 @@
+#maincontainer{
+    text-align:center;
+    max-width:fit-content;
+    margin:auto;
+}
+
+#popup{
+    position:fixed;
+    left:2vw;
+    bottom:4vh;
+    visibility:hidden;
+}
