@@ -1,3 +1,27 @@
+body{
+    background:#d7f4ff;
+}
+
+h1{
+    font-family:"Chango";
+}
+
+@font-face {
+    font-family:"typographica";
+    src: url(assets/TypoGraphica_demo.otf);
+}
+
+@font-face {
+    font-family:"chaolphabet";
+    src: url(assets/Chaolphabet.ttf);
+}
+
+.chango-regular {
+  font-family: "Chango", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 #maincontainer{
     text-align:center;
     max-width:fit-content;

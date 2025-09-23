@@ -1,7 +1,7 @@
 
 let p = 0;
 let c = 0;
-let chaoplaceholder,chaogif,resultchao;
+let chaoplaceholder,chaogif,resultchao, resultlove,egg;
 let chaotype = "neutral";
 
 
@@ -17,7 +17,9 @@ function submitting(){
 function preload(){
     chaoplaceholder = loadImage("assets/placeholderchao.png");
     chaogif = loadImage("assets/chaogif.gif");
-    resultchao = loadImage("assets/placeholderchao.png");
+    resultchao = loadImage("assets/neutral.png");
+    resultlove = loadImage("assets/neutrallove.png");
+    egg = loadImage("assets/egg.png");
 }
 
 function setup(){
@@ -25,6 +27,7 @@ function setup(){
 
     let canvas = createCanvas(800,500);
     canvas.parent(canvasBox);
+    frameRate(10);
     imageMode(CENTER);
     noStroke();
     fill("#fffff");
@@ -33,53 +36,55 @@ function setup(){
 
 function draw(){
     background(51);
-    pages();
-    counter++;
-    //console.log(p);
 
-    if(counter>=40&&submitted){
-        loadingFortune();
-        Alignment();
-    }
-    
-    
+    if(answer){
+        pages();
+
+        if(submitted){
+            Alignment();
+        }
+    } 
 }
 
 function pages(){
     if(p==0){
-        image(chaoplaceholder,width/2,height/2);
-        text("page 0",40,40);
+        image(egg,width/2,height/2);
     }
     else if(p==1){
-        text("page 1",40,40);
+        loadingFortune();
     }
     else if(p==2){
-        text("page 2",40,40);
-        text(answer,100,400);
-        image(resultchao,width/2,height/2);
+        image(egg,width/2,height/2);
+        text("oh? your egg is hatching!",width/2,400);
     }
     else if(p==3){
-        background(50);
-        text("no matter the result, your chao loves you!",width/2,height/2);
+        image(resultchao,width/2,height/2);
+    }
+    else if(p==4){
+        text(answer,width/2,400);
+        image(resultchao,width/2,height/2);
+    }
+    else if(p==5){
+        image(resultlove,width/2,height/2);
+        text("no matter the result, your chao loves you!",width/2,400);
     }
 }
 
 function loadingFortune(){
     c++;
-    if(p==1){
-        if(c<600){
-        background(200);
-        if(c<200){
-            text("reading your fortune",100,height/2);
-        } else if(c>200&&c<400){
-            text("communicating with the stars",100,height/2);
-        } else if(c>400&&c<600){
-            text("it's becoming clear",100,height/2);
-        }
-        image(chaogif,width/2,height/2);
-        } else if(c>600){
-            p=2;
-        }
+
+    background(200);
+    if(c<20){
+        text("reading your fortune",100,height/2);
+    } else if(c>20&&c<40){
+        text("communicating with the stars",100,height/2);
+    } else if(c>40&&c<60){
+        text("it's becoming clear",100,height/2);
+    }
+    image(chaogif,width/2,height/2);
+    
+    if(c>60){
+        p=2;
     }
     
 
@@ -89,6 +94,7 @@ function Alignment(){
     if(alignment=="positive"){
         chaotype = "hero";
         resultchao = loadImage("assets/hero.png");
+        resultlove = loadImage("assets/herolove.png");
     }
     else if(alignment=="neutral"){
         chaotype = "neutral";
@@ -96,12 +102,17 @@ function Alignment(){
     else if(alignment=="negative"){
         chaotype = "dark";
         resultchao = loadImage("assets/dark.png");
+        resultlove = loadImage("assets/darklove.png");
     }
 
 }
 
 function mouseClicked(){
-    if(p==2){
+    if(p!=1){
         p++;
     }
 }
+
+// function makeButton(x,y,w,h){
+    
+// }

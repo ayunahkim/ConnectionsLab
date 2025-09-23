@@ -1,9 +1,7 @@
-let answer, responded;
+let responded, submitted;
+let answer = null;
 let alignment;
 let test = 0;
-let counter = 0;
-let submitted;
-//console.log(counter);
 
 
 let positive,neutral,negative=[];
@@ -18,7 +16,6 @@ fetch("https://cors-anywhere.herokuapp.com/https://eightballapi.com/api/categori
         neutral = data.neutral;
         negative = data.negative;
         console.log("sending to respond function");
-        console.log(counter);
         respond();
     });
 
@@ -50,5 +47,4 @@ function respond(){
     }
     //console.log(answer);
     responded = true;
-    console.log(counter);
 }
