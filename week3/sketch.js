@@ -18,7 +18,7 @@ function submitting(){
 
 function preload(){
     chaoplaceholder = loadImage("assets/placeholderchao.png");
-    chaogif = loadImage("assets/chaogif.gif");
+    chaogif = loadImage("assets/chaofloat.gif");
     resultchao = loadImage("assets/neutral.png");
     resultlove = loadImage("assets/neutrallove.png");
     egg = loadImage("assets/egg.png");
@@ -58,6 +58,8 @@ function draw(){
 function pages(){
     if(p==0){
         image(egg,width/2,height/2);
+        image(crystalball,width/2,height/2);
+        
     }
     else if(p==1){
         loadingFortune();
@@ -75,27 +77,21 @@ function pages(){
         }
     }
     else if(p==4){
-        text("CONGRATULATIONS",width/2,100);
+        text("TADA!!!",width/2,100);
         image(resultchao,width/4,height/2);
-        // push();
-        // fill("white");
-        // rect(width-width/4,height/2,180,300);
-        // pop();
-        // push();
-        // textAlign(LEFT);
-        // text("chao info",width-width/4,height/4);
-
-        // pop();
     }
     else if(p==5){
-        text("now let's see what your wish's result was",width/2,100);
-        image(questionchao,width/2,height/2);
+        image(resultchao,width/4,height/2);
     }
     else if(p==6){
+        text("wonder what the answer to your wish was?",width/2,450);
+        image(questionchao,width/2,height/2);
+    }
+    else if(p==7){
         text(answer,width/2,400);
         image(resultchao,width/2,height/2);
     }
-    else if(p==7){
+    else if(p==8){
         image(resultlove,width/2,height/2);
         text("no matter the result, your chao loves you!",width/2,400);
     }
@@ -104,6 +100,9 @@ function pages(){
 function loadingFortune(){
     c++;
 
+    image(chaogif,width/2,height/2);
+    push();
+    fill(255);
     if(c<20){
         text("reading your fortune",width/2,height/2);
     } else if(c>20&&c<40){
@@ -111,7 +110,7 @@ function loadingFortune(){
     } else if(c>40&&c<60){
         text("it's becoming clear",width/2,height/2);
     }
-    image(chaogif,width/2,height/2);
+    pop();
     
     if(c>60){
         p=2;
@@ -142,13 +141,17 @@ function Alignment(){
 function mouseClicked(){
     if(mouseX>0&&mouseX<800&&mouseY>0&&mouseY<500){
         if(p!=0 && p!=1){
+            if(p==2){
+                createChao();
+            }
+            if(p==4){
+                infoBox();
+            }
             p++;
             
         }
-        if(p==2){
-            createChao();
-        }
         
+
     }
 }
 
@@ -156,10 +159,16 @@ function createChao(){
     chaoname = random(chaodata.name);
     chaopersonality = random(chaodata.personality);
     chaofav = random(chaodata.favorite);
-
-
+    console.log("chao created");
 }
 
-// function makeButton(x,y,w,h){
-    
-// }
+function infoBox(){
+    let popup = document.getElementById("popup");
+    // let infobox = document.getElementById("infobox");
+    popup.innerHTML = `<h3>Chao Information</h3>
+                        <p><b>Name: </b>` + chaoname +`</p>
+                        <p><b>Personality: </b>` + chaopersonality + `</p>
+                        <p><b>Favorite fruit: </b>` + chaofav + `</p>`;
+    popup.style.visibility = "visible";
+    console.log("infobox ran");
+}

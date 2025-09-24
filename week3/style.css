@@ -11,7 +11,7 @@ input{
 
 input[type=text]{
     width:50%;
-    border: 2px solid rgb(176, 163, 212);
+    border: 2px solid rgb(123, 110, 159);
     border-radius:8px;
 }
 
@@ -19,7 +19,17 @@ h1{
     font-family:"Chango";
     padding:10px;
     color:#8b81a6;
+    /* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white; */
 }
+
+/* h2{
+    font-family:"Chango";
+} */
+
+/* canvas{
+    border:1px solid rgb(176, 163, 212);
+} */
 
 @font-face {
     font-family:"typographica";
@@ -56,9 +66,11 @@ h1{
 
 #popup{
     position:fixed;
-    left:2vw;
-    top:4vh;
-    background:white;
-    width:20%;
+    padding:20px;
+    border:1px solid rgb(176, 163, 212);
+    right:10%;
+    top:32%;
+    background:rgba(255, 255, 255, 0.511);
+    width:40%;
     visibility:hidden;
 }
