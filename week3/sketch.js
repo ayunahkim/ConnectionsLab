@@ -35,7 +35,7 @@ function setup(){
 }
 
 function draw(){
-    background(51);
+    background(180);
 
     if(answer){
         pages();
@@ -108,8 +108,12 @@ function Alignment(){
 }
 
 function mouseClicked(){
-    if(p!=1){
-        p++;
+    if(mouseX>0&&mouseX<800&&mouseY>0&&mouseY<500){
+        if(p!=0 && p!=1){
+            p++;
+            //console.log("clicked");
+        }
+        
     }
 }
 
