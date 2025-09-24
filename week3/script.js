@@ -15,12 +15,12 @@ fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=
         positive = data.positive;
         neutral = data.neutral;
         negative = data.negative;
-        console.log("sending to respond function");
+        //console.log("sending to respond function");
         respond();
     });
 
 function respond(){
-    console.log("responding");
+    //console.log("responding");
     let randnum = Math.floor(Math.random()*3);
 
     console.log(randnum);

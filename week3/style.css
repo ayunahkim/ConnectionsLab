@@ -17,6 +17,8 @@ input[type=text]{
 
 h1{
     font-family:"Chango";
+    padding:10px;
+    color:#8b81a6;
 }
 
 @font-face {
@@ -55,6 +57,8 @@ h1{
 #popup{
     position:fixed;
     left:2vw;
-    bottom:4vh;
+    top:4vh;
+    background:white;
+    width:20%;
     visibility:hidden;
 }
