@@ -9,7 +9,7 @@ let randind;
     
 console.log("starting")
 
-fetch("https://cors-anywhere.herokuapp.com/https://eightballapi.com/api/categories?locale=en")
+fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=en")
     .then(response => response.json())
     .then(data => {
         positive = data.positive;
