@@ -147,6 +147,9 @@ function mouseClicked(){
             if(p==4){
                 infoBox();
             }
+            if(p==5){
+                document.getElementById("popup").style.visibility = "hidden";
+            }
             p++;
             
         }
@@ -164,11 +167,13 @@ function createChao(){
 
 function infoBox(){
     let popup = document.getElementById("popup");
-    // let infobox = document.getElementById("infobox");
+    // if(p==4){
+        
+    // }
     popup.innerHTML = `<h3>Chao Information</h3>
-                        <p><b>Name: </b>` + chaoname +`</p>
-                        <p><b>Personality: </b>` + chaopersonality + `</p>
-                        <p><b>Favorite fruit: </b>` + chaofav + `</p>`;
+                    <p><b>Name: </b>` + chaoname +`</p>
+                    <p><b>Personality: </b>` + chaopersonality + `</p>
+                    <p><b>Favorite fruit: </b>` + chaofav + `</p>`;
     popup.style.visibility = "visible";
     console.log("infobox ran");
 }
