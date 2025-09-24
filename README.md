@@ -7,3 +7,5 @@ repository for all the projects for connections lab fall 2025
 
 # Link to demos
 **Week 2:** https://ayunahkim.github.io/ConnectionsLab/week2/
+
+**Week 3:** https://ayunahkim.github.io/ConnectionsLab/week3/
