@@ -1,7 +1,7 @@
 
 let p = -1;
 let c = 0;
-let chaoplaceholder,chaogif,resultchao, resultlove,egg;
+let chaogif,resultchao, resultlove,egg;
 let hatching,crystalball,questionchao;
 let chaotype = "neutral";
 let chaodata, chaoname, chaopersonality, chaofav;
@@ -19,7 +19,6 @@ function submitting(){
 
 
 function preload(){
-    chaoplaceholder = loadImage("assets/placeholderchao.png");
     chaogif = loadImage("assets/chaofloat.gif");
     resultchao = loadImage("assets/neutral.png");
     resultlove = loadImage("assets/neutrallove.png");
@@ -247,11 +246,11 @@ function idInfo(){
     text(chaofav,490,280);
     pop();
 
-    // push();
-    // textAlign(CENTER);
-    // textFont("Libre Barcode 39",40);
-    // text("placeholder",490,360);
-    // pop();
+    push();
+    textAlign(CENTER);
+    textFont("Libre Barcode 39",40);
+    text("placeholder",490,360);
+    pop();
 }
 
 function saveChao(){
