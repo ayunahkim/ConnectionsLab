@@ -24,7 +24,7 @@ function preload(){
     resultchao = loadImage("assets/neutral.png");
     resultlove = loadImage("assets/neutrallove.png");
     egg = loadImage("assets/egg.png");
-    hatching = loadImage("assets/hatching_wbg.gif");
+    hatching = loadImage("assets/hatching.gif");
     crystalball = loadImage("assets/fortuneball.png");
     questionchao = loadImage("assets/neutralquestion.png");
     titlescreen = loadImage("assets/titlescreen.png");

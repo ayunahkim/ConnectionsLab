@@ -1,8 +1,5 @@
 body {
     background:#ffffff;
-    /* background-image:url("assets/Chao_In_Space_Garden.jpg");
-    background-repeat:no-repeat;
-    background-size:cover; */
     font-family: "Roboto Mono", monospace;
 }
 
@@ -26,6 +23,10 @@ h1 {
     -webkit-text-stroke-color: #556690;
 }
 
+h2 {
+    color:#62bbdb;
+}
+
 a {
     text-decoration:none;
     color:#556690;
@@ -33,16 +34,6 @@ a {
 
 a:hover {
     color:#ABE8FF;
-}
-
-@font-face {
-    font-family:"typographica";
-    src: url(assets/TypoGraphica_demo.otf);
-}
-
-@font-face {
-    font-family:"chaolphabet";
-    src: url(assets/Chaolphabet.ttf);
 }
 
 .chango-regular {
@@ -131,4 +122,9 @@ a:hover {
     font-family: "Roboto Mono";
     padding:.4em;
     font-size:14px;
+}
+
+#paragraphs {
+    text-align:left;
+    padding-left:20%;
 }
