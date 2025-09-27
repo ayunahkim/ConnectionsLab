@@ -128,4 +128,7 @@ a:hover {
 
 #savebttn {
     visibility:hidden;
+    font-family: "Roboto Mono";
+    padding:.4em;
+    font-size:14px;
 }

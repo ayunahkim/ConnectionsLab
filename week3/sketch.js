@@ -38,7 +38,7 @@ function setup(){
     let canvas = createCanvas(800,500);
     canvas.parent(canvasBox);
 
-    frameRate(10);
+    frameRate(6);
     imageMode(CENTER);
     noStroke();
     fill("#8b81a6");
@@ -71,11 +71,13 @@ function pages(){
         document.getElementById("centerbox").style.visibility = "visible";
     }
     else if(p==1){
+        frameRate(10);
         loadingFortune();
     }
     else if(p==2){
         image(egg,width/2,height/2);
         text("oh? your egg is hatching!",width/2,400);
+        text("click to hatch!",width/2,420);
         c = 0;
     }
     else if(p==3){
@@ -86,7 +88,11 @@ function pages(){
         }
     }
     else if(p==4){
-        text("TADA!!!",width/2,100);
+        frameRate(6);
+        push();
+        textSize(40);
+        text("TADA!!!",width/2,height/2);
+        pop();
         image(resultchao,width/4,height/2);
     }
     else if(p==5){
@@ -106,10 +112,15 @@ function pages(){
     }
     else if(p==8){
         image(resultlove,width/2,height/2);
+        textSize(20);
         text("no matter the result, your chao loves you!",width/2,450);
+        textSize(14);
     }
     else if(p==9){
+        frameRate(1);
         idInfo();
+        text("use the save button below to save your chao's id card!",width/2,460);
+        text("or click on the program to restart",width/2,480);
     }
 }
 
@@ -173,6 +184,7 @@ function mouseClicked(){
             }
             if(p==9){
                 document.getElementById("savebttn").style.visibility = "hidden";
+                window.location.reload();
             }
             p++;
             
