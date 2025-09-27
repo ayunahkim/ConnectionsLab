@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- link p5 library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+
+    <!-- link stylesheet and favicon -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
 
-    <!-- link to fonts -->
+    <!-- link fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Libre+Barcode+39&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <title>Week 3 HW</title>
+
+    <title>Fortune's Chao Garden</title>
 </head>
+
 <body>
+
     <!-- header title & nav banner -->
     <div id="headerbar">
         <div class="leftside">
@@ -24,31 +30,38 @@
         <div class="rightside">
             <div id="linkgrid">
                 <a href="info.html">Info</a>
-                <a href="https://www.notion.so/Project-1-Fortune-s-Chao-Garden-275525646c0a80568354e966439120f4?source=copy_link">Documentation</a>
+                <a href="https://www.notion.so/Project-1-Fortune-s-Chao-Garden-275525646c0a80568354e966439120f4?source=copy_link" target="_blank">Documentation</a>
                 <a href="https://github.com/ayunahkim/ConnectionsLab/tree/main/week3" target="_blank">Repo</a>
             </div>
         </div>
     </div>
+
     <!-- main container of stuff -->
     <div id="maincontainer">
+
         <!-- holds p5.js canvas -->
-        <div id="canvasbox">
-        </div>
-        <!-- centered elements to go under canvas -->
+        <div id="canvasbox"></div>
+
+        <!-- centered elements to go under the canvas -->
         <div id="centerbox">
+
+            <!-- ask wish or question input  -->
             <form onsubmit="submitting();return false">
-                <input placeholder="Ask what you wish..." type="text" value="">
+                <input placeholder="Ask what you wish..." type="text" value="" required>
                 <input id="submitBttn" type="submit" value="submit">
             </form>
             <button id="savebttn" onclick="saveChao()">save</button>
         </div> 
     </div>
 
+    <!-- box that pops up onto canvas on a specific page -->
     <div id="popup">
+        <!-- box of information about chao displayed -->
         <div id="infobox">
         </div>
     </div>
 
+    <!-- link javascript files -->
     <script src="script.js"></script>
     <script src="sketch.js"></script>
 </body>

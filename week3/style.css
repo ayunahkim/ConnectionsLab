@@ -1,6 +1,7 @@
 body {
     background:#ffffff;
     font-family: "Roboto Mono", monospace;
+    cursor:url("assets/favicon.png"),auto;
 }
 
 input {
@@ -50,7 +51,7 @@ a:hover {
 }
 
 .libre-barcode-39-regular {
-  font-family: "Libre Barcode 39", system-ui;
+  font-family: "LibreBarcode39", system-ui;
   font-weight: 400;
   font-style: normal;
 }
@@ -126,5 +127,7 @@ a:hover {
 
 #paragraphs {
     text-align:left;
-    padding-left:20%;
+    padding-top:20px;
+    margin:auto;
+    max-width:60%;
 }
