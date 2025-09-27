@@ -1,9 +1,12 @@
-body{
-    background:#d7f4ff;
+body {
+    background:#ffffff;
+    /* background-image:url("assets/Chao_In_Space_Garden.jpg");
+    background-repeat:no-repeat;
+    background-size:cover; */
     font-family: "Roboto Mono", monospace;
 }
 
-input{
+input {
     font-family: "Roboto Mono";
     padding:.4em;
     font-size:14px;
@@ -15,21 +18,22 @@ input[type=text]{
     border-radius:8px;
 }
 
-h1{
+h1 {
     font-family:"Chango";
     padding:10px;
-    color:#8b81a6;
-    /* -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: white; */
+    color:#ABE8FF;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #556690;
 }
 
-/* h2{
-    font-family:"Chango";
-} */
+a {
+    text-decoration:none;
+    color:#556690;
+}
 
-/* canvas{
-    border:1px solid rgb(176, 163, 212);
-} */
+a:hover {
+    color:#ABE8FF;
+}
 
 @font-face {
     font-family:"typographica";
@@ -54,23 +58,74 @@ h1{
   font-style: normal;
 }
 
-#maincontainer{
+.libre-barcode-39-regular {
+  font-family: "Libre Barcode 39", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.leftside {
+    position:fixed;
+    margin-left:8%;
+    left:20px;
+    top:6px;
+}
+
+.rightside {
+    position:fixed;
+    right:20%;
+    top:2.6%;
+    text-align:right;
+    align-content:right;
+    padding:10px;
+}
+
+#headerbar {
+    margin-bottom:7%;
+    padding:10px;
+}
+
+#linkgrid {
+    padding:20px;
+    display:inline-grid;
+    grid-template-columns:repeat(6,auto);
+    grid-column-gap:40%;
+}
+
+#maincontainer {
     text-align:center;
     max-width:fit-content;
     margin:auto;
 }
 
-#canvasbox{
-    font-family:"Roboto Mono";
+#homecontainer {
+    margin:auto;
 }
 
-#popup{
+#canvasbox {
+    font-family:"Roboto Mono";
+    padding:6px;
+    border:2px solid rgb(176, 163, 212);
+    border-radius:10px;
+    background:#d7f4ff;
+    margin-bottom:10px;
+}
+
+#centerbox {
+    visibility:hidden;
+}
+
+#popup {
     position:fixed;
     padding:20px;
-    border:1px solid rgb(176, 163, 212);
-    right:10%;
-    top:32%;
+    border:2px solid rgb(176, 163, 212);
+    right:28%;
+    top:36%;
     background:rgba(255, 255, 255, 0.511);
-    width:40%;
+    width:20%;
+    visibility:hidden;
+}
+
+#savebttn {
     visibility:hidden;
 }

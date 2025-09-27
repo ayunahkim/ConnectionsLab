@@ -1,10 +1,12 @@
 
-let p = 0;
+let p = -1;
 let c = 0;
 let chaoplaceholder,chaogif,resultchao, resultlove,egg;
 let hatching,crystalball,questionchao;
 let chaotype = "neutral";
 let chaodata, chaoname, chaopersonality, chaofav;
+let chaoID, fruits;
+let outputIMG;
 
 
 function submitting(){
@@ -25,7 +27,9 @@ function preload(){
     hatching = loadImage("assets/hatching_wbg.gif");
     crystalball = loadImage("assets/fortuneball.png");
     questionchao = loadImage("assets/neutralquestion.png");
+    titlescreen = loadImage("assets/titlescreen.png");
     chaodata = loadJSON("chao.json");
+    chaoID = loadImage("assets/neutralid.png");
 }
 
 function setup(){
@@ -33,18 +37,20 @@ function setup(){
 
     let canvas = createCanvas(800,500);
     canvas.parent(canvasBox);
+
     frameRate(10);
     imageMode(CENTER);
     noStroke();
     fill("#8b81a6");
     textAlign(CENTER);
+    textSize(14);
     textFont("Roboto Mono");
     rectMode(CENTER);
 }
 
 function draw(){
-    // background(255,0);
-    clear();
+    background("#d7f4ff");
+    //clear();
 
     if(answer){
         pages();
@@ -56,10 +62,13 @@ function draw(){
 }
 
 function pages(){
+    if(p==-1){
+        image(titlescreen,width/2,height/2);
+    }
     if(p==0){
         image(egg,width/2,height/2);
         image(crystalball,width/2,height/2);
-        
+        document.getElementById("centerbox").style.visibility = "visible";
     }
     else if(p==1){
         loadingFortune();
@@ -88,12 +97,19 @@ function pages(){
         image(questionchao,width/2,height/2);
     }
     else if(p==7){
+        push();
+        textSize(50);
+        textStyle(BOLD);
         text(answer,width/2,400);
+        pop();
         image(resultchao,width/2,height/2);
     }
     else if(p==8){
         image(resultlove,width/2,height/2);
-        text("no matter the result, your chao loves you!",width/2,400);
+        text("no matter the result, your chao loves you!",width/2,450);
+    }
+    else if(p==9){
+        idInfo();
     }
 }
 
@@ -125,6 +141,7 @@ function Alignment(){
         resultchao = loadImage("assets/hero.png");
         resultlove = loadImage("assets/herolove.png");
         questionchao = loadImage("assets/heroquestion.png");
+        chaoID = loadImage("assets/heroid.png");
     }
     else if(alignment=="neutral"){
         chaotype = "neutral";
@@ -134,6 +151,7 @@ function Alignment(){
         resultchao = loadImage("assets/dark.png");
         resultlove = loadImage("assets/darklove.png");
         questionchao = loadImage("assets/darkquestion.png");
+        chaoID = loadImage("assets/darkid.png");
     }
 
 }
@@ -150,6 +168,12 @@ function mouseClicked(){
             if(p==5){
                 document.getElementById("popup").style.visibility = "hidden";
             }
+            if(p==8){
+                document.getElementById("savebttn").style.visibility = "visible";
+            }
+            if(p==9){
+                document.getElementById("savebttn").style.visibility = "hidden";
+            }
             p++;
             
         }
@@ -162,18 +186,64 @@ function createChao(){
     chaoname = random(chaodata.name);
     chaopersonality = random(chaodata.personality);
     chaofav = random(chaodata.favorite);
-    console.log("chao created");
+
+    if(chaofav=="Round Fruit"){
+        fruits = loadImage("assets/circlefruits.png");
+    } else if(chaofav == "Triangle Fruit"){
+        fruits = loadImage("assets/trianglefruits.png");
+    } else if(chaofav == "Square Fruit"){
+        fruits = loadImage("assets/squarefruits.png");
+    }
+
+    //console.log("chao created");
 }
 
 function infoBox(){
     let popup = document.getElementById("popup");
-    // if(p==4){
-        
-    // }
     popup.innerHTML = `<h3>Chao Information</h3>
-                    <p><b>Name: </b>` + chaoname +`</p>
-                    <p><b>Personality: </b>` + chaopersonality + `</p>
-                    <p><b>Favorite fruit: </b>` + chaofav + `</p>`;
+                    <p><b>Name: </b>${chaoname}</p>
+                    <p><b>Personality: </b>${chaopersonality}</p>
+                    <p><b>Favorite fruit: </b>${chaofav}</p>`;
     popup.style.visibility = "visible";
     console.log("infobox ran");
+}
+
+function idInfo(){
+    image(chaoID,width/2,height/2);
+    image(fruits,width/2,height/2);
+
+    push();
+    textAlign(LEFT);
+    textStyle(BOLD);
+    text("Name:",360,190);
+    textStyle(NORMAL);
+    text(chaoname,360,210);
+
+    textStyle(BOLD);
+    text("Alignment:",490,190);
+    textStyle(NORMAL);
+    text(chaotype,490,210);
+
+    textStyle(BOLD);
+    text("Personality:",360,260);
+    textStyle(NORMAL);
+    text(chaopersonality,360,280);
+    
+    textStyle(BOLD);
+    text("Favorite Fruit:",490,260);
+    textStyle(NORMAL);
+    text(chaofav,490,280);
+    pop();
+
+    // push();
+    // textAlign(CENTER);
+    // textFont("Libre Barcode 39",40);
+    // text("placeholder",490,360);
+    // pop();
+}
+
+function saveChao(){
+    //console.log(mouseX,mouseY);
+    outputIMG = get(142,94,521,309);
+    save(outputIMG);
 }

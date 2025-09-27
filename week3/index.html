@@ -11,19 +11,27 @@
     <!-- link to fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Libre+Barcode+39&family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>Week 3 HW</title>
 </head>
 <body>
+    <!-- header title & nav banner -->
+    <div id="headerbar">
+        <div class="leftside">
+            <a href="index.html"><h1>Fortune's Chao Garden</h1></a>
+        </div>
+        <div class="rightside">
+            <div id="linkgrid">
+                <a href="gallery.html">Gallery</a>
+                <a href="info.html">Info</a>
+                <a href="https://github.com/ayunahkim/ConnectionsLab/tree/main/week3">Repo</a>
+            </div>
+        </div>
+    </div>
     <!-- main container of stuff -->
     <div id="maincontainer">
         <!-- holds p5.js canvas -->
         <div id="canvasbox">
-            <h1>Fortune's Chao Garden</h1>
         </div>
         <!-- centered elements to go under canvas -->
         <div id="centerbox">
@@ -31,13 +39,12 @@
                 <input placeholder="Ask what you wish..." type="text" value="">
                 <input id="submitBttn" type="submit" value="submit">
             </form>
+            <button id="savebttn" onclick="saveChao()">save</button>
         </div> 
     </div>
 
-    <!-- popup chao with more information -->
     <div id="popup">
         <div id="infobox">
-
         </div>
     </div>
 

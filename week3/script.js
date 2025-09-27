@@ -7,9 +7,7 @@ let test = 0;
 let positive,neutral,negative=[];
 let randind;
     
-console.log("starting")
-
-fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=en")
+fetch("https://cors-anywhere.herokuapp.com/https://eightballapi.com/api/categories?locale=en")
     .then(response => response.json())
     .then(data => {
         positive = data.positive;
@@ -22,8 +20,6 @@ fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=
 function respond(){
     //console.log("responding");
     let randnum = Math.floor(Math.random()*3);
-
-    console.log(randnum);
 
     //positive
     if(randnum==0){
