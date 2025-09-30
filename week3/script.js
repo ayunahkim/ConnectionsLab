@@ -18,10 +18,32 @@ fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=
         //call respond function
         respond();
     }).catch(error => {
+        if (window.confirm('Automatic CORS server not working. Press OK to open new tab and request access to the CORS demo server then return to this tab again')){
+            window.open('https://cors-anywhere.herokuapp.com/corsdemo', '_blank').focus();
+        };
+        //alert("automatic CORS not working. please request access to this CORS demo server and try again: https://cors-anywhere.herokuapp.com/corsdemo");
+        backupCall();
+    });
+
+
+function backupCall(){
+    fetch("https://cors-anywhere.herokuapp.com/https://eightballapi.com/api/categories?locale=en")
+    .then(response => response.json())
+    .then(data => {
+        //save the fetched data into 3 different arrays based on category
+        positive = data.positive;
+        neutral = data.neutral;
+        negative = data.negative;
+
+        //call respond function
+        respond();
+    }).catch(error => {
         console.log("Error!!! : " + error);
         //since the common error is related to CORS call limit, trying again in a few minutes should have it working again
-        alert("Error!! Please try again in a couple minutes.");
+        alert("Error!! Please try again in a couple minutes");
+        backupCall();
     });
+}
 
 //respond function
 function respond(){
