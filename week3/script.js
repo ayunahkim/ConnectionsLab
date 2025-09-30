@@ -17,6 +17,10 @@ fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=
 
         //call respond function
         respond();
+    }).catch(error => {
+        console.log("Error!!! : " + error);
+        //since the common error is related to CORS call limit, trying again in a few minutes should have it working again
+        alert("Error!! Please try again in a couple minutes.");
     });
 
 //respond function
