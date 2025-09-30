@@ -105,9 +105,8 @@ function pages(){
         frameRate(6); //set frameRate back to a slower speed
         push();
         textSize(50);
-        text("TADA!!!",width/2,height/2);
         pop();
-        image(resultchao,width/4,height/2);
+        image(resultchao,width/2,height/2);
     }
     else if(p==5){ //result chao and info box pop up page
         image(resultchao,width/4,height/2);

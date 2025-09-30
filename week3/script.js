@@ -14,30 +14,11 @@ fetch("8ballbackup.json")
         positive = data.positive;
         neutral = data.neutral;
         negative = data.negative;
-
         //call respond function
         respond();
     }).catch(error => {
-        //alert("automatic CORS not working. please request access to this CORS demo server and try again: https://cors-anywhere.herokuapp.com/corsdemo");
-        backupCall();
+        console.log("ERROR: "+error);
     });
-
-
-// BELOW IS WHAT I WOULD DO IF I WANTED TO PULL STRAIGHT FROM API SOURCE NOT LOCAL
-// fetch("https://cors-anywhere.com/https://eightballapi.com/api/categories?locale=en")
-//     .then(response => response.json())
-//     .then(data => {
-//         //save the fetched data into 3 different arrays based on category
-//         positive = data.positive;
-//         neutral = data.neutral;
-//         negative = data.negative;
-
-//         //call respond function
-//         respond();
-//     }).catch(error => {
-//         //alert("automatic CORS not working. please request access to this CORS demo server and try again: https://cors-anywhere.herokuapp.com/corsdemo");
-//         backupCall();
-//     });
 
 
 //respond function
