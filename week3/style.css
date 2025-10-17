@@ -113,7 +113,7 @@ a:hover {
     border:2px solid rgb(176, 163, 212);
     right:28%;
     top:36%;
-    background:rgba(255, 255, 255, 0.511);
+    background:#e7f9ff;
     width:20%;
     visibility:hidden;
 }
@@ -131,15 +131,3 @@ a:hover {
     margin:auto;
     max-width:60%;
 }
-
-/* .gallerygrid {
-
-}
-
-.row {
-
-}
-
-.column {
-
-} */
