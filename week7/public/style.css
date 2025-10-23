@@ -1,0 +1,15 @@
+body {
+    width:50%;
+    margin:auto;
+    align-content:center;
+}
+
+button {
+    border-radius:20px;
+    margin:2px;
+}
+
+#cookie {
+    font-size:40px;
+    padding:10px;
+}
